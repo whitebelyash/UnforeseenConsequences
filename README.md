@@ -12,5 +12,4 @@ Part of my plan for this mod is to optimize some parts of Minecraft to run bette
 
 Why is it named unforeseen consequences? I didn't realize how destructive this change is before I started making the mod and HL2 is my favorite game. 
 
-Currently, there are several compatibility issues from it not working at all under Mesa on Linux due to shader compilation to it not launching at all on my HD 4000 machine due to "invalid window" hints when my main machine launches it fine
-If your machine is picky about GLSL shaders being ES or not it will ***NOT*** work with this at the moment due to me still needing to make a shader converter
+Currently there are severe compatibility issues (like expected) and under Mesa the game runs worse due to constant GL error log spam

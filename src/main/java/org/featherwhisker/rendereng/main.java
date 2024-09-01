@@ -18,6 +18,7 @@ public class main implements ModInitializer {
         return (str
                 .replaceAll("#version 150","#version "+shaderVersion+"\n"+append)
                 .replaceAll("texCoord2 = UV2;","texCoord2 = vec2(UV2);")
+				.replaceAll("uv / 256.0","vec2(uv) / 256.0")
         );
     }
 }
