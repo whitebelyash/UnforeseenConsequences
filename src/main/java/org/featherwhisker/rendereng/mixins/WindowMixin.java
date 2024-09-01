@@ -56,6 +56,9 @@ public class WindowMixin {
                 str = str +  "Unknown platform";
             }
             log.info(str);
+            if (str != "Running on: Windows"){
+                log.info("There are known issues running on non-windows platforms.");
+            }
         } catch(Exception ignored) {
             log.info("Could not detect platform, old GLFW version?");
         }

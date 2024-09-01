@@ -6,7 +6,8 @@
   "client": [
     "GlStateManagerMixin",
     "WindowMixin",
-    "ShaderStageMixin"
+    "ShaderStageMixin",
+    "RenderSystemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

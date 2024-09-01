@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 import static com.mojang.blaze3d.platform.GlStateManager.glShaderSource;
-import static org.featherwhisker.rendereng.main.log;
+import static org.featherwhisker.rendereng.main.*;
 
 @Mixin(ShaderStage.class)
 public class ShaderStageMixin {
@@ -21,14 +21,13 @@ public class ShaderStageMixin {
 			)
 	)
 	private static void glShaderSourceIntercept(int i,@NotNull java. util. List<String> strings) {
-		for (int i1 = 0; i1 < strings.size(); i1++) {
-			var a = strings.get(i1);
-			strings.set(i1,a
-					.replaceAll("#version 150","#version 300 es\nprecision lowp float;")
-					.replaceAll("gl_FragColor","outColor")
-			);
+		if (shouldConvertShaders) {
+			for (int i1 = 0; i1 < strings.size(); i1++) {
+				var a = strings.get(i1);
+				strings.set(i1,convertShader(a,i1));
+			}
+			log.info(strings.toString());
 		}
-		log.info(strings.toString());
 		glShaderSource(i,strings);
 	}
 }

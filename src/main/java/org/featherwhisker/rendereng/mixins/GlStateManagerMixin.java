@@ -27,4 +27,10 @@ public class GlStateManagerMixin {
      */
     @Overwrite
     public static void _polygonMode(int face, int mode) {}
+    /**
+     * @author Featherwhisker
+     * @reason Not supported in OGL ES
+     */
+    @Overwrite
+    public static void _glDrawPixels(int width, int height, int format, int type, long pixels) {}
 }
