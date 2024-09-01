@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "unforeseenconsequences",
+  "version": "${version}",
+  "name": "Unforeseen Consequences",
+  "description": "Hacks OpenGL ES 3.0 into minecraft",
+  "authors": ["Featherwhisker"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "org.featherwhisker.rendereng.main"
+    ]
+  },
+  "mixins": [
+    "unforeseenconsequences.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
