@@ -26,7 +26,7 @@ public class ShaderStageMixin {
 				var a = strings.get(i1);
 				strings.set(i1,convertShader(a,i1));
 			}
-			log.info(strings.toString());
+			//log.info(strings.toString());
 		}
 		glShaderSource(i,strings);
 	}
