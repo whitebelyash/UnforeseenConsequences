@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_17",
   "client": [
     "GlStateManagerMixin",
-    "WindowMixin"
+    "WindowMixin",
+    "ShaderStageMixin"
   ],
   "injectors": {
     "defaultRequire": 1
