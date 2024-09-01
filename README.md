@@ -1,4 +1,4 @@
-# Unforeseen Consequences- OpenGL ES 3.0 in Minecraft
+# Unforeseen Consequences - OpenGL ES 3.0 in Minecraft
 ### Note: This mod REQUIRES the `GL_OES_mapbuffer` extension to work at all!
 
 > Prepare for unforeseen consequences.  
