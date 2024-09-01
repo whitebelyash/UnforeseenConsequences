@@ -29,8 +29,6 @@ public class WindowMixin {
 
         // Rendering related things
         glfwWindowHint(GLFW_REFRESH_RATE, GL_DONT_CARE);
-        glfwWindowHint(GLFW_DOUBLEBUFFER,GL_TRUE);
-        glfwWindowHint(GLFW_AUX_BUFFERS, GL_NONE);
         glfwWindowHint(GLFW_SAMPLES, GL_NONE);
 
         // Misc OpenGL hints
