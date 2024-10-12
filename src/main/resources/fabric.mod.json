@@ -8,6 +8,7 @@
   "contact": {},
   "license": "MIT",
   "environment": "client",
+  "icon": "assets/unforeseenconsequences/icon.png",
   "entrypoints": {
     "main": [
       "org.featherwhisker.rendereng.main"
@@ -19,5 +20,9 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "minecraft": ">=1.19.4"
+  },
+  "conflicts": {
+    "sodium": "*",
+    "computercraft": "*"
   }
 }
