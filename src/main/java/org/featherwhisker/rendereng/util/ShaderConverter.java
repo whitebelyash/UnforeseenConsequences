@@ -5,6 +5,8 @@ import org.featherwhisker.rendereng.main;
 public class ShaderConverter {
 
     public static String convert(String source) {
+        if(!main.shouldConvertShaders)
+            return source;
         String append = "precision mediump float;\nprecision mediump int;\n\n";
         return (source
                 .replaceAll("#version 150", "#version " + main.shaderVersion + "\n" + append)
