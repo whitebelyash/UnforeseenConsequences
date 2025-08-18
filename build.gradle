@@ -39,14 +39,7 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    // Mod testing
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    //modRuntimeOnly("cc.tweaked:cc-tweaked-${project.minecraft_version}-fabric:$cctVersion")
-    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:$reiVersion"
-    modRuntimeOnly "curse.maven:jade-324717:$jadeVersion"
-    modRuntimeOnly("squeek.appleskin:appleskin-fabric:$appleVersion") {
-        exclude module: 'modmenu'
-    }
+
 }
 
 processResources {
@@ -62,7 +55,7 @@ processResources {
     }
 }
 
-def targetJavaVersion = 17
+def targetJavaVersion = 21
 tasks.withType(JavaCompile).configureEach {
     // ensure that the encoding is set to UTF-8, no matter what the system default is
     // this fixes some edge cases with special characters not displaying correctly
