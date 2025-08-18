@@ -8,7 +8,7 @@ public class ShaderConverter {
         if(!main.shouldConvertShaders)
             return source;
         String append = "precision mediump float;\nprecision mediump int;\n\n";
-        return (source
+        String out = source
                 .replaceAll("#version 150", "#version " + main.shaderVersion + "\n" + append)
                 .replaceAll("texCoord2 = UV2;", "texCoord2 = vec2(UV2);")
                 .replaceAll("uv / 256.0", "vec2(uv) / 256.0")
@@ -17,7 +17,11 @@ public class ShaderConverter {
                         "float block_brightness = get_brightness(floor(texCoord.x * 16.0) / 15.0) * BlockFactor")
                 .replaceAll("float sky_brightness = get_brightness\\(floor\\(texCoord.y \\* 16\\) / 15\\) \\* SkyFactor",
                         "float sky_brightness = get_brightness(floor(texCoord.y * 16.0) / 15.0) * SkyFactor")
-                //   .replaceAll("//.*\\n//.*\\n/.*\\n","") //because CC needs to have comments before the version statement
-        );
+                ;
+        if(main.debugMode){
+            main.log.info("Original source: \n" + source + "\n --------------------");
+            main.log.info("Converted source: \n" + out + "\n --------------------");
+        }
+        return out;
     }
 }

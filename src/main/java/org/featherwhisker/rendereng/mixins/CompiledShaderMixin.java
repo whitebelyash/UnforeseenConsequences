@@ -25,13 +25,12 @@ public class CompiledShaderMixin {
 			)
 	)
 	private static void glShaderSourceIntercept(int i, @NotNull String source) {
-		source = ShaderConverter.convert(source);
-		log.info("Converted source: " + source);
-		glShaderSource(i, source);
+		glShaderSource(i, ShaderConverter.convert(source));
 	}
 	@Inject(method = "compile", at = @At(value = "HEAD"))
 	private static CompiledShader compileHead(Identifier id, CompiledShader.Type type, String source, CallbackInfoReturnable<CompiledShader> info){
-		log.info("Compiling shader: " + id.getNamespace() + ":" + id.getPath());
+		if(debugMode)
+			log.info("Compiling shader: " + id.getNamespace() + ":" + id.getPath());
 		return info.getReturnValue();
 	}
 }
