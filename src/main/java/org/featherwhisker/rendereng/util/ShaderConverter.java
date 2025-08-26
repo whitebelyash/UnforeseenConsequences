@@ -18,7 +18,7 @@ public class ShaderConverter {
                 .replaceAll("float sky_brightness = get_brightness\\(floor\\(texCoord.y \\* 16\\) / 15\\) \\* SkyFactor",
                         "float sky_brightness = get_brightness(floor(texCoord.y * 16.0) / 15.0) * SkyFactor")
                 ;
-        if(main.debugMode){
+        if(main.debugMode && false){
             main.log.info("Original source: \n" + source + "\n --------------------");
             main.log.info("Converted source: \n" + out + "\n --------------------");
         }

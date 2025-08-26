@@ -2,6 +2,7 @@ package org.featherwhisker.rendereng.mixins;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.MinecraftVersion;
+import org.featherwhisker.rendereng.main;
 import org.spongepowered.asm.mixin.Mixin;
 import net.minecraft.client.util.Window;
 import org.spongepowered.asm.mixin.injection.At;
@@ -32,9 +33,10 @@ public class WindowMixin {
         glfwWindowHint(GLFW_SAMPLES, GL_NONE);
 
         // Misc OpenGL hints
-        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+       // glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // Required for Apple, but currently disabled for debugging
         glfwWindowHint(GLFW_CONTEXT_CREATION_API, GLFW_NATIVE_CONTEXT_API);
-        glfwWindowHint(GLFW_CONTEXT_NO_ERROR, GL_TRUE); //more performance + not having to rewrite texture attaching
+        main.log.info("Using NATIVE context!");
+       // glfwWindowHint(GLFW_CONTEXT_NO_ERROR, GL_TRUE); //more performance + not having to rewrite texture attaching + probably breaks GLX/RenderDoc
 
         //Platform Specific
         try {

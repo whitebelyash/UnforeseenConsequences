@@ -8,7 +8,9 @@
     "GlStateManagerMixin",
     "RenderSystemMixin",
     "CompiledShaderMixin",
-    "WindowMixin"
+    "WindowMixin",
+    "WindowFBMixin",
+    "FramebufferMixin"
   ],
   "injectors": {
     "defaultRequire": 1
