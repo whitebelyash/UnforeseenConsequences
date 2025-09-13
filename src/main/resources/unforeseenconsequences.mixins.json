@@ -3,15 +3,7 @@
   "minVersion": "0.8",
   "package": "org.featherwhisker.rendereng.mixins",
   "compatibilityLevel": "JAVA_17",
-  "client": [
-    "GlDebugMixin",
-    "GlStateManagerMixin",
-    "RenderSystemMixin",
-    "CompiledShaderMixin",
-    "WindowMixin",
-    "WindowFBMixin",
-    "FramebufferMixin"
-  ],
+  "client": ["CompiledShaderMixin", "FramebufferMixin", "GlDebugMixin", "GlStateManagerMixin", "RenderSystemMixin", "WindowFBMixin", "WindowMixin", "sodium.ShaderWorkaroundsMixin"],
   "injectors": {
     "defaultRequire": 1
   }

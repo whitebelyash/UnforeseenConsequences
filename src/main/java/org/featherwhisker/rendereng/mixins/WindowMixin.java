@@ -41,22 +41,23 @@ public class WindowMixin {
         //Platform Specific
         try {
             String str = "Running on: ";
-            if (glfwGetPlatform() == GLFW_PLATFORM_X11) {
+            int platform = glfwGetPlatform();
+            if (platform == GLFW_PLATFORM_X11) {
                 str = str + "*nix with X11";
                 glfwWindowHintString(GLFW_X11_CLASS_NAME, "Minecraft");
                 glfwWindowHintString(GLFW_X11_INSTANCE_NAME, frameName);
-            } else if (glfwGetPlatform() == GLFW_PLATFORM_WAYLAND) {
+            } else if (platform == GLFW_PLATFORM_WAYLAND) {
                 str = str + "*nix with Wayland";
-            } else if (glfwGetPlatform() == GLFW_PLATFORM_COCOA) {
+            } else if (platform == GLFW_PLATFORM_COCOA) {
                 str = str + "macOS";
                 glfwWindowHintString(GLFW_COCOA_FRAME_NAME, frameName);
-            } else if (glfwGetPlatform() == GLFW_PLATFORM_WIN32) {
+            } else if (platform == GLFW_PLATFORM_WIN32) {
                 str = str + "Windows";
             } else {
                 str = str +  "Unknown platform";
             }
             log.info(str);
-            if (str != "Running on: Windows"){
+            if (platform != GLFW_PLATFORM_WIN32){
                 log.info("There are known issues running on non-windows platforms.");
             }
         } catch(Exception ignored) {
